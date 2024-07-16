@@ -1,5 +1,6 @@
 <script lang="ts">
 	import MenuButtons from '$lib/buttons/MenuButtons.svelte';
+	import SimpleButton from '$lib/buttons/SimpleButton.svelte';
 	import type { UserData } from '$lib/types/user';
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
@@ -24,7 +25,9 @@
 			<h2 class="text-lg font-light text-gray-500">{userProfile.job_title}</h2>
 		</div>
 
-		<MenuButtons {user} />
+		<div class="text-white">
+			<MenuButtons {user} ButtonComponent={SimpleButton} />
+		</div>
 	</div>
 </div>
 <div class="mt-24 flex justify-center items-center">

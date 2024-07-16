@@ -1,12 +1,16 @@
 <script lang="ts">
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import SimpleButton from './SimpleButton.svelte';
+	import ActionButton from './ActionButton.svelte';
 	import type { UserData } from '$lib/types/user';
 	import ConnectDrawer from '$lib/drawers/ConnectDrawer.svelte';
+	import type { ButtonComponent } from './types';
 
 	const drawerStore = getDrawerStore();
 
 	export let user: UserData;
+	export let ButtonComponent: ButtonComponent = SimpleButton;
+
 	let userProfile = user.userProfile;
 	let userSetting = user.userSetting;
 
@@ -23,7 +27,7 @@
 	}
 
 	function emailMe() {
-		window.location.href = `mailto:${''}`;
+		window.location.href = `mailto:${userProfile.email}`;
 	}
 
 	function vcard() {
@@ -32,26 +36,26 @@ VERSION:3.0
 FN:${userProfile.name}
 TEL:${userProfile.phone_number}
 EMAIL:${userProfile.email}
-TITLE:${userProfile.phone_number}
+TITLE:${userProfile.job_title}
 END:VCARD`;
 	}
 </script>
 
-<div class="pt-10 font-medium text-lg w-full flex flex-col space-y-5 text-white">
-	{#if userSetting.exchange_contacts == true}
-		<SimpleButton text="Exchange Contact" action={drawerStore.open} />
+<div class="pt-10 font-medium text-lg w-full flex flex-col space-y-5">
+	{#if userSetting.exchange_contacts}
+		<ActionButton text="Exchange Contact" action={drawerStore.open} {ButtonComponent} />
 	{/if}
 
-	{#if userSetting.save_contact == true}
-		<SimpleButton text="Save Contact" action={saveContact} />
+	{#if userSetting.save_contact}
+		<ActionButton text="Save Contact" action={saveContact} {ButtonComponent} />
 	{/if}
 
-	{#if userSetting.call_me == true}
-		<SimpleButton text="Call Me" action={callMe} />
+	{#if userSetting.call_me}
+		<ActionButton text="Call Me" action={callMe} {ButtonComponent} />
 	{/if}
 
-	{#if userSetting.email_me == true}
-		<SimpleButton text="Email Me" action={emailMe} />
+	{#if userSetting.email_me}
+		<ActionButton text="Email Me" action={emailMe} {ButtonComponent} />
 	{/if}
 </div>
 

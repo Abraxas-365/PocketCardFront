@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SimpleTemplate from '$lib/templates/SimpleTemplate.svelte';
+	import TemplateOne from '$lib/templates/TemplateOne.svelte';
 	import type { UserData, UserProfile, UserSetting } from '$lib/types/user';
 	import { onMount } from 'svelte';
 
@@ -42,6 +43,8 @@
 	<p>Error: {error}</p>
 {:else if userData && userData.userSetting.template == 'default'}
 	<SimpleTemplate user={userData} profileImage={profileImageUrl} />
+{:else if userData && userData.userSetting.template == 'one'}
+	<TemplateOne user={userData} profileImage={profileImageUrl} />
 {:else}
 	<div></div>
 {/if}
