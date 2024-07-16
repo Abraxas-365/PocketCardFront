@@ -40,7 +40,7 @@
 
 {#if error}
 	<p>Error: {error}</p>
-{:else if userData}
+{:else if userData && userData.userSetting.template == 'default'}
 	<SimpleTemplate user={userData} profileImage={profileImageUrl} />
 {:else}
 	<div></div>

@@ -24,6 +24,7 @@ export interface UserSetting {
 	call_me: boolean;
 	email_me: boolean;
 	social_media: boolean;
+	template: string;
 }
 
 export interface UserData {

@@ -37,7 +37,7 @@ END:VCARD`;
 	}
 </script>
 
-<div class="pt-10 font-medium text-lg w-full flex flex-col space-y-5">
+<div class="pt-10 font-medium text-lg w-full flex flex-col space-y-5 text-white">
 	{#if userSetting.exchange_contacts == true}
 		<SimpleButton text="Exchange Contact" action={drawerStore.open} />
 	{/if}
