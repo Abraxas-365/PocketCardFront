@@ -63,10 +63,7 @@
 	<!--Inner Container-->
 	<div class="w-full rounded-b-full flex-grow" style="background-color: {transitionColor};">
 		<!-- This div creates the space at the top -->
-		<div
-			class="h-48 overflow-hidden rounded-b-full"
-			style="background-color: {transitionColor};"
-		></div>
+		<div class="h-48 w-full rounded-b-full" style="background-color: {transitionColor};"></div>
 	</div>
 
 	<div class="px-5 relative z-10 mt-[-23rem] flex-grow flex flex-col">
