@@ -1,7 +1,8 @@
 <script lang="ts">
 	import SimpleTemplate from '$lib/templates/SimpleTemplate.svelte';
 	import TemplateOne from '$lib/templates/TemplateOne.svelte';
-	import type { UserData, UserProfile, UserSetting } from '$lib/types/user';
+	import TemplateTwo from '$lib/templates/TemplateTwo.svelte';
+	import type { UserData, UserProfile } from '$lib/types/user';
 	import { onMount } from 'svelte';
 
 	let userData: UserData | null = null;
@@ -20,11 +21,9 @@
 			}
 
 			const userProfile: UserProfile = await profileResponse.json();
-			const userSetting: UserSetting = await settingsResponse.json();
 
 			userData = {
-				userProfile,
-				userSetting
+				userProfile
 			};
 
 			console.log(userData);
@@ -41,10 +40,12 @@
 
 {#if error}
 	<p>Error: {error}</p>
-{:else if userData && userData.userSetting.template == 'default'}
+{:else if userData && userData.userProfile.template == 'default'}
 	<SimpleTemplate user={userData} profileImage={profileImageUrl} />
-{:else if userData && userData.userSetting.template == 'one'}
+{:else if userData && userData.userProfile.template == 'one'}
 	<TemplateOne user={userData} profileImage={profileImageUrl} />
+{:else if userData && userData.userProfile.template == 'two'}
+	<TemplateTwo user={userData} profileImage={profileImageUrl} />
 {:else}
 	<div></div>
 {/if}
