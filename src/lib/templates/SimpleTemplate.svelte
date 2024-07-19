@@ -13,7 +13,7 @@
 	});
 </script>
 
-<div class="mx-auto max-w-xl min-h-screen">
+<div class="mx-auto md:max-w-xl min-h-screen">
 	<!--Inner Container-->
 	<div class="w-full pt-16 px-8">
 		<!--Image avatar-->
