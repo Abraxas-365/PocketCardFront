@@ -1,7 +1,10 @@
 <script lang="ts">
 	import SimpleTemplate from '$lib/templates/SimpleTemplate.svelte';
+	import TemplateFour from '$lib/templates/TemplateFour.svelte';
 	import TemplateOne from '$lib/templates/TemplateOne.svelte';
+	import TemplateThree from '$lib/templates/TemplateThree.svelte';
 	import TemplateTwo from '$lib/templates/TemplateTwo.svelte';
+	import TemplateFive from '$lib/templates/TemplateFive.svelte';
 	import type { UserData, UserProfile } from '$lib/types/user';
 	import { onMount } from 'svelte';
 
@@ -47,7 +50,7 @@
 		location: 'New York, NY',
 		profile_picture_url: 'https://via.placeholder.com/128',
 		theme: 'light',
-		template: "one",
+		template: "five",
 		custom_url: 'https://example.com/johndoe',
 		job_title: 'Software Engineer',
 		facebook_url: 'https://facebook.com/johndoe',
@@ -79,6 +82,13 @@
 	<TemplateOne user={userData} profileImage={profileImageUrl} />
 {:else if userData && userData.userProfile.template == 'two'}
 	<TemplateTwo user={userData} profileImage={profileImageUrl} />
+{:else if userData && userData.userProfile.template == 'three'}
+	<TemplateThree user={userData} profileImage={profileImageUrl} />
+{:else if userData && userData.userProfile.template == 'four'}	
+	<TemplateFour user={userData} profileImage={profileImageUrl} />
+{:else if userData && userData.userProfile.template == 'five'}
+	<TemplateFive user={userData} profileImage={profileImageUrl} />
+
 {:else}
 	<div></div>
 {/if}

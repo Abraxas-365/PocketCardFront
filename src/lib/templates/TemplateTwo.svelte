@@ -44,17 +44,22 @@
 	});
 </script>
 
-<section class="relative flex flex-col h-screen items-center justify-center">
-	<Avatar
-		rounded="rounded-none"
-		class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full md:w-auto xl:min-w-[350px] xl:max-w-[600px]"
-		src={profileImage}
-	/>
+<section class="min-h-screen md:min-h-auto gap-0 mx-auto md:max-w-xl" style="background-color: red;">
+	<div class="m-0">
+
+		<!-- class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full md:w-auto xl:min-w-[350px] xl:max-w-[600px]" -->
+		<Avatar
+			rounded="rounded-none"
+			class="w-full md:h-full object-cover"
+			src={profileImage}
+		/>
+	</div>
+	
 	<div
-		class="z-10 mt-[322px] p-4 py-6 rounded-t-[30px] w-full md:w-auto xl:min-w-[350px] xl:max-w-[600px] flex-grow"
-		style="background-color: {transitionColor};"
+		class="z-10 -translate-y-[11%] h-full md:-translate-y-2/4 p-4 py-6 rounded-t-[30px] w-full"
+		style="background-color: red;"
 	>
-		<div class="flex flex-row">
+		<div class="flex flex-row w-full justify-between px-3">
 			<div class="flex flex-col gap-1">
 				<p class="text-xl text-white">{userProfile.name}</p>
 				<p class="text-sm text-white">{userProfile.job_title}</p>

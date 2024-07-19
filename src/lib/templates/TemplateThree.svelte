@@ -1,6 +1,7 @@
 <script lang="ts">
 	import MenuButtons from '$lib/buttons/MenuButtons.svelte';
 	import OneButton from '$lib/buttons/OneButton.svelte';
+	import ThreeButton from '$lib/buttons/ThreeButton.svelte';
 	import type { UserData } from '$lib/types/user';
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
@@ -62,25 +63,20 @@
 <!-- <div class="relative mx-auto max-w-xl flex flex-col min-h-screen"> -->
 <div class="mx-auto md:max-w-xl min-h-screen">
 	<!--Inner Container-->
-	<div class="w-full rounded-b-full flex-grow" style="background-color: {transitionColor};">
-		<!-- This div creates the space at the top -->
-		<!-- <div class="h-48 w-full rounded-b-full" style="background-color: {transitionColor};"></div> -->
-	</div>
 
 	<!-- <div class="px-5 relative z-10 mt-[-23rem] flex-grow flex flex-col"> -->
-	<div class="px-5 relative z-10 py-5 flex-grow flex flex-col" style="background-color: {transitionColor};">
-		<!-- Adjust -mt-60 as needed -->
-		<div class="rounded-full overflow-hidden h-44 w-44 md:w-52 md:h-52 mx-auto flex justify-center items-center p-5 bg-red-50/20">
-			<div class="absolute w-full h-full md:w-64 md:h-64 rounded-full -z-10" style="background-color: {accentColor};" />
-			<Avatar src={profileImage} width="md:w-52 w-full" rounded="rounded-full" />
-		</div>
-		<div class="mt-10 flex flex-col justify-center items-center space-y-2 text-white">
-			<h1 class="text-2xl">{userProfile.name}</h1>
-			<h2 class="text-lg font-light">{userProfile.job_title}</h2>
+	<div class="px-5 relative z-10 py-5 grid grid-cols-1">
+		<!-- change the background image to the profileImage -->
+		<div class="overflow-hidden w-full h-[280px] mx-auto flex justify-center items-center" style="background-image: {profileImage}; background-color: gray; background-blend-mode:overlay;">
+
+			<div class="mt-10 flex flex-col justify-center items-center space-y-2 text-white">
+				<h1 class="text-2xl">{userProfile.name}</h1>
+				<h2 class="text-lg font-light">{userProfile.job_title}</h2>
+			</div>
 		</div>
 
 		<div style="color: {baseColor}" class="flex-grow">
-			<MenuButtons {user} ButtonComponent={OneButton} />
+			<MenuButtons {user} ButtonComponent={ThreeButton} />
 		</div>
 	</div>
 	<div class="mt-auto flex justify-center items-center bg-white h-28">

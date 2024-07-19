@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ButtonFour from '$lib/buttons/ButtonFour.svelte';
 	import MenuButtons from '$lib/buttons/MenuButtons.svelte';
 	import OneButton from '$lib/buttons/OneButton.svelte';
 	import type { UserData } from '$lib/types/user';
@@ -60,7 +61,7 @@
 </script>
 
 <!-- <div class="relative mx-auto max-w-xl flex flex-col min-h-screen"> -->
-<div class="mx-auto md:max-w-xl min-h-screen">
+<div class="mx-auto md:max-w-xl min-h-screen bg-green-500">
 	<!--Inner Container-->
 	<div class="w-full rounded-b-full flex-grow" style="background-color: {transitionColor};">
 		<!-- This div creates the space at the top -->
@@ -80,7 +81,7 @@
 		</div>
 
 		<div style="color: {baseColor}" class="flex-grow">
-			<MenuButtons {user} ButtonComponent={OneButton} />
+			<MenuButtons {user} ButtonComponent={ButtonFour} />
 		</div>
 	</div>
 	<div class="mt-auto flex justify-center items-center bg-white h-28">
