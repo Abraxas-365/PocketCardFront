@@ -61,7 +61,7 @@
 </script>
 
 <!-- <div class="relative mx-auto max-w-xl flex flex-col min-h-screen"> -->
-<div class="mx-auto md:max-w-xl min-h-screen">
+<div class="mx-auto md:max-w-xl min-h-screen" style="background-color: {transitionColor};">
 	<!--Inner Container-->
 
 	<!-- <div class="px-5 relative z-10 mt-[-23rem] flex-grow flex flex-col"> -->

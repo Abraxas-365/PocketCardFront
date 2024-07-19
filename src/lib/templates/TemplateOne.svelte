@@ -60,7 +60,7 @@
 </script>
 
 <!-- <div class="relative mx-auto max-w-xl flex flex-col min-h-screen"> -->
-<div class="mx-auto md:max-w-xl min-h-screen">
+<div class="mx-auto md:max-w-xl min-h-screen" style="background-color: {transitionColor};">
 	<!--Inner Container-->
 	<div class="w-full rounded-b-full flex-grow" style="background-color: {transitionColor};">
 		<!-- This div creates the space at the top -->

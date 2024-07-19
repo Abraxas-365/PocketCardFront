@@ -44,7 +44,7 @@
 	});
 </script>
 
-<section class="min-h-screen md:min-h-auto gap-0 mx-auto md:max-w-xl" style="background-color: red;">
+<section class="min-h-screen md:min-h-auto gap-0 mx-auto md:max-w-xl" style="background-color: {transitionColor};">
 	<div class="m-0">
 
 		<!-- class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full md:w-auto xl:min-w-[350px] xl:max-w-[600px]" -->
