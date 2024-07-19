@@ -1,4 +1,5 @@
 <script lang="ts">
+	import FiveButton from '$lib/buttons/FiveButton.svelte';
 	import MenuButtons from '$lib/buttons/MenuButtons.svelte';
 	import OneButton from '$lib/buttons/OneButton.svelte';
 	import type { UserData } from '$lib/types/user';
@@ -70,7 +71,7 @@
 	<!-- <div class="px-5 relative z-10 mt-[-23rem] flex-grow flex flex-col"> -->
 	<div class="px-5 relative z-10 py-5 flex-grow flex flex-col" style="background-color: {transitionColor};">
 		<!-- Adjust -mt-60 as needed -->
-		<div class="rounded-full overflow-hidden h-44 w-44 md:w-52 md:h-52 mx-auto flex justify-center items-center p-5 bg-red-50/20">
+		<div class="rounded-full overflow-hidden h-44 w-44 md:w-52 md:h-52 mx-auto flex justify-center items-center p-5 bg-white">
 			<div class="absolute w-full h-full md:w-64 md:h-64 rounded-full -z-10" style="background-color: {accentColor};" />
 			<Avatar src={profileImage} width="md:w-52 w-full" rounded="rounded-full" />
 		</div>
@@ -80,10 +81,10 @@
 		</div>
 
 		<div style="color: {baseColor}" class="flex-grow">
-			<MenuButtons {user} ButtonComponent={OneButton} />
+			<MenuButtons {user} ButtonComponent={FiveButton} />
 		</div>
 	</div>
-	<div class="mt-auto flex justify-center items-center bg-white h-28">
+	<div class="mt-auto flex justify-center mx-auto items-center bg-white h-28">
 		<p class="text-2xl text-black font-bold">PocketCard.me</p>
 	</div>
 </div>

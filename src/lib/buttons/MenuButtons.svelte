@@ -12,7 +12,6 @@
 	export let ButtonComponent: ButtonComponent = SimpleButton;
 
 	let userProfile = user.userProfile;
-	let userSetting = user.userSetting;
 
 	function saveContact() {
 		const newContact = new Blob([vcard()], { type: 'text/vcard' });
@@ -42,19 +41,19 @@ END:VCARD`;
 </script>
 
 <div class="pt-10 font-medium text-lg w-full flex flex-col space-y-5">
-	{#if userSetting.exchange_contacts}
+	{#if userProfile.exchange_contacts}
 		<ActionButton text="Exchange Contact" action={drawerStore.open} {ButtonComponent} />
 	{/if}
 
-	{#if userSetting.save_contact}
+	{#if userProfile.save_contact}
 		<ActionButton text="Save Contact" action={saveContact} {ButtonComponent} />
 	{/if}
 
-	{#if userSetting.call_me}
+	{#if userProfile.call_me}
 		<ActionButton text="Call Me" action={callMe} {ButtonComponent} />
 	{/if}
 
-	{#if userSetting.email_me}
+	{#if userProfile.email_me}
 		<ActionButton text="Email Me" action={emailMe} {ButtonComponent} />
 	{/if}
 </div>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ButtonFour from '$lib/buttons/ButtonFour.svelte';
 	import MenuButtons from '$lib/buttons/MenuButtons.svelte';
 	import OneButton from '$lib/buttons/OneButton.svelte';
 	import type { UserData } from '$lib/types/user';
@@ -80,7 +81,7 @@
 		</div>
 
 		<div style="color: {baseColor}" class="flex-grow">
-			<MenuButtons {user} ButtonComponent={OneButton} />
+			<MenuButtons {user} ButtonComponent={ButtonFour} />
 		</div>
 	</div>
 	<div class="mt-auto flex justify-center items-center bg-white h-28">

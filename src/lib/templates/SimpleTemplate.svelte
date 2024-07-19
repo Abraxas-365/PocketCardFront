@@ -13,12 +13,12 @@
 	});
 </script>
 
-<div class="mx-auto max-w-xl">
+<div class="mx-auto md:max-w-xl min-h-screen">
 	<!--Inner Container-->
 	<div class="w-full pt-16 px-8">
 		<!--Image avatar-->
-		<div class="rounded-full overflow-hidden w-52 h-52 mx-auto">
-			<Avatar src={profileImage} width="w-52" rounded="rounded-full" />
+		<div class="rounded-full overflow-hidden h-44 w-44 md:w-52 md:h-52 mx-auto">
+			<Avatar src={profileImage} width="md:w-52 w-full" rounded="rounded-full" />
 		</div>
 		<div class="mt-5 flex flex-col justify-center items-center space-y-2 text-black">
 			<h1 class="text-2xl">{userProfile.name}</h1>
